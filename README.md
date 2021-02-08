@@ -8,7 +8,7 @@ Fedora
 
 ```
 $ docker build -t pind-fedora - < Dockerfile.fedora
-$ docker run -t --rm pind-fedora podman ps
+$ docker run -t --privileged --rm pind-fedora podman ps
 ```
 
 CentOS
@@ -16,6 +16,6 @@ CentOS
 
 ```
 $ docker build -t pind-centos - < Dockerfile.centos
-$ docker run -t --rm pind-centos podman ps
+$ docker run -t --privileged --rm pind-centos podman ps
 ```
 
