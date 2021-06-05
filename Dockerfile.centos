@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM registry.centos.org/centos:latest
 LABEL MAINTAINER='Gerard Braad <me@gbraad.nl>'
 
 RUN dnf update -y && dnf install -y podman crun && \
