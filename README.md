@@ -27,4 +27,10 @@ $ docker build -t pind-centos - < Dockerfile.centos
 $ docker run -it --privileged --rm pind-centos podman ps
 ```
 
-Note: this image does currently not work as expected.
+CentOS 8 Stream
+---------------
+
+```
+$ docker build -t pind-centos-stream8 - < Dockerfile.centos-stream8
+$ docker run -it --privileged --rm pind-centos-stream8 podman ps
+```
