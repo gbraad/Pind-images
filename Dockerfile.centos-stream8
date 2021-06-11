@@ -1,0 +1,10 @@
+FROM quay.io/centos/centos:stream8
+LABEL maintainer='Gerard Braad <me@gbraad.nl>' \
+    authors="Bala <srbala@gmail.com>"
+
+RUN dnf update -y && dnf install -y podman crun && \
+    rm -rf /var/cache /var/log/dnf* /var/log/yum.* && \
+    cp /usr/share/containers/containers.conf /etc/containers/containers.conf && \
+    sed -i '/^# cgroup_manager = "systemd"/ a cgroup_manager = "cgroupfs"' /etc/containers/containers.conf && \
+    sed -i '/^# events_logger = "journald"/ a events_logger = "file"' /etc/containers/containers.conf && \
+    sed -i '/^driver = "overlay"/ c\driver = "vfs"' /etc/containers/storage.conf
